@@ -24,7 +24,7 @@ processing <- function()
   df <- read.csv(datasetTxtPath,header=FALSE,col.names=variables.names,na.strings="?",sep=";",skip = 66637, nrows = 2880)
   
   ## Cleaning formating.
-  # Interpreting Dates ans Times
+  # Interpreting Dates ans Times, creating a new field DateTime
   df$Date <- as.Date(df$Date,format="%d/%m/%Y")
   df$DateTime <- strptime(paste(df$Date,df$Time), format="%Y-%m-%d %H:%M:%S")
   
